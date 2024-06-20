@@ -1,0 +1,52 @@
+@mixin burger {
+  width: 25px;
+  height: 20px;
+  border-radius: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  &__line,
+  &__line::before,
+  &__line::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    border-radius: 3rem;
+    background: blue;
+    transition: all 400ms;
+  }
+
+  &__line {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+  }
+
+  &--active {
+    &__line {
+      background: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
