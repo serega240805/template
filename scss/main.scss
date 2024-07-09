@@ -12,3 +12,14 @@
 @import "./components/burger";
 @import "./components/hero";
 @import "./components/footer";
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100vh;
+    height: auto;
+}
